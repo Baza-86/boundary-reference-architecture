@@ -30,15 +30,11 @@ listener "tcp" {
 listener "tcp" {
   address = "boundary"
   purpose = "cluster"
-  tls_cert_file = "/boundary/Boundary.ctr"
-  tls_key_file = "/boundary/Boundary.key"
 }
 
 listener "tcp" {
 	address = "boundary"
 	purpose = "proxy"
-	tls_cert_file = "/boundary/Boundary.ctr"
-  tls_key_file = "/boundary/Boundary.key"
 }
 
 // Yoy can generate the keys by 
