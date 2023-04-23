@@ -2,7 +2,7 @@
 
 function cleanup() {
   pushd compose
-  docker-compose rm -fs 
+  docker compose rm -fs 
   popd
   # Purge the TF State
   rm -rf ./terraform/.terraform
@@ -14,7 +14,7 @@ trap cleanup SIGKILL SIGINT
 
 function init_compose() {
   pushd compose/
-  docker-compose up -d
+  docker compose up -d
   popd
 }
 
