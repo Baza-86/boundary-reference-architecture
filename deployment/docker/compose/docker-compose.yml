@@ -23,8 +23,6 @@ services:
     command: ["database", "init", "-config", "/boundary/boundary.hcl"]
     volumes:
       - "${PWD}/:/boundary:ro,z"
-      - "${PWD}/Boundary.crt:/etc/certs/Boundary.crt:ro,z"
-      - "${PWD}/Boundary.key:/etc/certs/Boundary.key:ro,z"
     environment:
       - BOUNDARY_PG_URL=postgresql://postgres:postgres@db/boundary?sslmode=disable
     cap_add:
@@ -39,8 +37,6 @@ services:
     command: ["server", "-config", "/boundary/boundary.hcl"]
     volumes:
       - "${PWD}/:/boundary/"
-      - "${PWD}/Boundary.crt:/etc/certs/Boundary.crt:ro,z"
-      - "${PWD}/Boundary.key:/etc/certs/Boundary.key:ro,z"
     ports:
       - "9200:9200"
       - "9201:9201"
