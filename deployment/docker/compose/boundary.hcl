@@ -23,19 +23,22 @@ worker {
 listener "tcp" {
   address = "boundary"
   purpose = "api"
-  tls_disable = true 
+  tls_cert_file = "/etc/certs/Boundary.ctr"
+  tls_key_file = "/etc/certs/Boundary.key"
 }
 
 listener "tcp" {
   address = "boundary"
   purpose = "cluster"
-  tls_disable = true 
+  tls_cert_file = "/etc/certs/Boundary.ctr"
+  tls_key_file = "/etc/certs/Boundary.key"
 }
 
 listener "tcp" {
 	address = "boundary"
 	purpose = "proxy"
-	tls_disable = true
+	tls_cert_file = "/etc/certs/Boundary.ctr"
+  tls_key_file = "/etc/certs/Boundary.key"
 }
 
 // Yoy can generate the keys by 
