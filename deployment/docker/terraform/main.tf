@@ -11,7 +11,7 @@ terraform {
 }
 
 provider "boundary" {
-  addr             = "http://127.0.0.1:9200"
+  addr             = "http://192.168.30.103:9200"
   recovery_kms_hcl = <<EOT
 kms "aead" {
   purpose = "recovery"
