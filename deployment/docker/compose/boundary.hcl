@@ -23,7 +23,7 @@ worker {
 listener "tcp" {
   address = "boundary"
   purpose = "api"
-  tls_cert_file = "/boundary/Boundary.ctr"
+  tls_cert_file = "/boundary/Boundary.crt"
   tls_key_file = "/boundary/Boundary.key"
 }
 
