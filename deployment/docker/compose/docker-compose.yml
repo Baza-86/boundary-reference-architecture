@@ -44,6 +44,7 @@ services:
     environment:
       - BOUNDARY_PG_URL=postgresql://postgres:postgres@db/boundary?sslmode=disable
       - HOSTNAME=boundary
+      - BOUNDARY_CACERT=/boundary/pfCA.crt
     depends_on:
       db-init:
         condition: service_completed_successfully
