@@ -19,7 +19,7 @@ services:
       retries: 5
 
   db-init:
-    image: hashicorp/boundary:0.9.0
+    image: hashicorp/boundary:0.12.0
     command: ["database", "init", "-config", "/boundary/boundary.hcl"]
     volumes:
       - "${PWD}/:/boundary:ro,z"
@@ -33,7 +33,7 @@ services:
 
 
   boundary:
-    image: hashicorp/boundary:0.9.0
+    image: hashicorp/boundary:0.12.0
     command: ["server", "-config", "/boundary/boundary.hcl"]
     volumes:
       - "${PWD}/:/boundary/"
@@ -48,7 +48,7 @@ services:
       db-init:
         condition: service_completed_successfully
     healthcheck:
-      test: ["CMD", "wget", "-O-", "http://boundary:9200"]
+      test: ["CMD", "wget", "-O-", "https://boundary:9200"]
       interval: 3s
       timeout: 5s
       retries: 5
